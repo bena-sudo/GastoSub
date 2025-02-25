@@ -1,4 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Tema claro */
+.light-theme {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #3f51b5;
+  --secondary-color: #ff4081;
+}
+
+/* Tema oscuro */
+.dark-theme {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --primary-color: #bb86fc;
+  --secondary-color: #03dac6;
+}
+
+/* Aplicamos las variables globales */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos para la barra de navegación */
+mat-toolbar {
+  background-color: var(--primary-color);
+}
+
+/* Estilos para los botones */
+button {
+  background-color: var(--secondary-color);
+  color: white;
+}
