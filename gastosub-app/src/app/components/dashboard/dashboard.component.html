@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <span>Gestor de Suscripciones</span>
+</mat-toolbar>
+
+<div class="container">
+  <h2>Resumen del Mes</h2>
+  <mat-card>
+    <mat-card-title>Total Gastado</mat-card-title>
+    <mat-card-content>
+      <h3>{{ totalExpense | currencyEur }}</h3>
+    </mat-card-content>
+  </mat-card>
+
+  <h2>Próximos Pagos</h2>
+  <mat-list>
+    @for (payment of upcomingPayments; track $index) {
+    <mat-list-item>
+      <span>{{ payment.name }} - Renovación: {{ payment.renewalDate }}</span>
+    </mat-list-item>
+    }
+  </mat-list>
+
+  <!-- Aquí puedes agregar un gráfico de gastos (por ejemplo, utilizando ngx-charts) -->
+</div>
