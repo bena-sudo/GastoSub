@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <span>Configuración</span>
+</mat-toolbar>
+
+<div class="container">
+  <h2>Ajustes de la Cuenta</h2>
+  <form (ngSubmit)="onSaveSettings()">
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Moneda</mat-label>
+      <mat-select [(ngModel)]="selectedCurrency" name="currency">
+        <mat-option value="EUR">Euro (€)</mat-option>
+        <mat-option value="USD">Dólar ($)</mat-option>
+        <!-- Agrega más opciones si es necesario -->
+      </mat-select>
+    </mat-form-field>
+
+    <mat-slide-toggle [(ngModel)]="notificationsEnabled" name="notifications">
+      Notificaciones por correo activadas
+    </mat-slide-toggle>
+
+    <div class="actions">
+      <button mat-raised-button color="primary" type="submit">
+        Guardar Configuración
+      </button>
+    </div>
+  </form>
+</div>
