@@ -1,0 +1,44 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer mode="side" opened>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/inicio" routerLinkActive="active-link"
+        >Inicio</a
+      >
+      <a
+        mat-list-item
+        routerLink="/suscripciones"
+        routerLinkActive="active-link"
+        >Suscripciones</a
+      >
+      <a mat-list-item routerLink="/historial" routerLinkActive="active-link"
+        >Historial</a
+      >
+      <a
+        mat-list-item
+        routerLink="/configuracion"
+        routerLinkActive="active-link"
+        >Configuración</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <span>Gestor de Suscripciones</span>
+
+      <span class="spacer"></span>
+
+      <mat-slide-toggle
+        [checked]="themeService.isDarkMode()"
+        (change)="toggleTheme()"
+      />
+      
+    </mat-toolbar>
+
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+
+    <footer class="footer">© 2024 - Gestor de Suscripciones</footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>
