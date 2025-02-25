@@ -1,0 +1,58 @@
+<mat-toolbar color="primary">
+  <span>{{ isEditMode ? "Editar Suscripción" : "Nueva Suscripción" }}</span>
+</mat-toolbar>
+
+<div class="container">
+  <h2>{{ isEditMode ? "Editar Suscripción" : "Agregar Nueva Suscripción" }}</h2>
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Nombre</mat-label>
+      <input
+        matInput
+        [(ngModel)]="subscriptionData.name"
+        name="name"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Precio</mat-label>
+      <input
+        matInput
+        type="number"
+        [(ngModel)]="subscriptionData.price"
+        name="price"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Categoría</mat-label>
+      <mat-select [(ngModel)]="subscriptionData.category" name="category">
+        <mat-option value="Entretenimiento">Entretenimiento</mat-option>
+        <mat-option value="Música">Música</mat-option>
+        <mat-option value="Educación">Educación</mat-option>
+        <!-- Agrega más opciones si deseas -->
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Fecha de Renovación</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        [(ngModel)]="subscriptionData.renewal"
+        name="renewal"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <div class="actions">
+      <button mat-raised-button color="primary" type="submit">
+        {{ isEditMode ? "Guardar Cambios" : "Agregar Suscripción" }}
+      </button>
+      <button mat-button routerLink="/suscripciones">Cancelar</button>
+    </div>
+  </form>
+</div>
