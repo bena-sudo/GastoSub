@@ -10,27 +10,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Paso 1: Checar el repositorio
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Paso 2: Configurar Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # Paso 3: Instalar dependencias en el directorio
       - name: Install dependencies
         working-directory: ./gastosub-app
         run: npm install
 
-      # Paso 4: Construir el proyecto Angular
       - name: Build Angular App
         working-directory: ./gastosub-app
         run: npm run build
 
-      # Paso 5: Copiar los archivos a la máquina remota por SCP
       - name: Copy build to remote server
         env:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
