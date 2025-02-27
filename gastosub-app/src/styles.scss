@@ -1,6 +1,6 @@
 @use "@angular/material" as mat;
 
-body{
+body {
   margin: 0%;
   height: 100%;
 }
@@ -17,6 +17,9 @@ body{
 }
 
 .dark-theme {
+  background-color: #121212;
+  color: #fff;
+
   color-scheme: dark;
   @include mat.theme(
     (
@@ -25,8 +28,4 @@ body{
       density: 0,
     )
   );
-
-  background-color: #121212;
-  color: #fff;
 }
-
