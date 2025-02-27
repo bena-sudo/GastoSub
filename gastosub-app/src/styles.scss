@@ -1,0 +1,32 @@
+@use "@angular/material" as mat;
+
+body{
+  margin: 0%;
+  height: 100%;
+}
+
+:root {
+  color-scheme: light;
+  @include mat.theme(
+    (
+      color: mat.$violet-palette,
+      typography: Roboto,
+      density: 0,
+    )
+  );
+}
+
+.dark-theme {
+  color-scheme: dark;
+  @include mat.theme(
+    (
+      color: mat.$violet-palette,
+      typography: Roboto,
+      density: 0,
+    )
+  );
+
+  background-color: #121212;
+  color: #fff;
+}
+

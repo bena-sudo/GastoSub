@@ -5,6 +5,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ThemeService } from '../../services/theme.service';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatIcon } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-main-layout',
@@ -16,6 +18,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatListModule,
     MatToolbarModule,
     MatSlideToggleModule,
+    MatIcon,
+    MatButtonModule,
   ],
   templateUrl: './main-layout.component.html',
   styleUrl: './main-layout.component.css',

@@ -1,5 +1,13 @@
 <mat-toolbar color="primary">
   <span>Gestor de Suscripciones</span>
+
+  <span class="spacer"></span>
+
+  <button mat-icon-button (click)="toggleTheme()" class="theme-button">
+    <mat-icon>{{
+      themeService.isDarkMode() ? "dark_mode" : "light_mode"
+    }}</mat-icon>
+  </button>
 </mat-toolbar>
 
 <div class="auth-content">
