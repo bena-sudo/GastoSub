@@ -20,5 +20,15 @@
     }
   </mat-list>
 
-  <!-- Aquí puedes agregar un gráfico de gastos (por ejemplo, utilizando ngx-charts) -->
+  <ngx-charts-line-chart
+    [results]="chartData"
+    [xAxis]="true"
+    [yAxis]="true"
+    [legend]="false"
+    [view]="[1000, 500]"
+    [yScaleMin]="10"
+    [yScaleMax]="300"
+    [autoScale]="true"
+  >
+  </ngx-charts-line-chart>
 </div>
